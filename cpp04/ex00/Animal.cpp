@@ -1,15 +1,5 @@
 #include "Animal.hpp"
 
-void Animal::makeSound(void)
-{
-    if (this->getType().compare("Cat"))
-        std::cout << "Miaaaaaw" << std::endl;
-    if (this->getType().compare("Dog"))
-        std::cout << "Waf Waf Waf" << std::endl;
-    else
-        std::cout << "... sound ..." << std::endl;
-}
-
 Animal::Animal(void)
 {
     this->setString("default");
@@ -20,7 +10,7 @@ Animal::~Animal()
 {
     std::cout << "Animal destructor" << std::endl;
 }
-std::string Animal::getType(void)
+std::string Animal::getType(void) const
 {
     return (this->type);
 }
@@ -29,6 +19,10 @@ void Animal::setString(std::string const str)
     this->type = str;
 }
 
+void Animal::makeSound(void) const
+{
+    std::cout << "... sound ..." << std::endl;
+}
 Dog::Dog(void)
 {
     this->Animal::setString("Dog");
@@ -38,6 +32,10 @@ Dog::Dog(void)
 Dog::~Dog()
 {
     std::cout << "Dog destructor" << std::endl;
+}
+void Dog::makeSound(void) const
+{
+    std::cout << "Waf Waf Waf" << std::endl;
 }
 
 Cat::Cat(void)
@@ -49,4 +47,9 @@ Cat::Cat(void)
 Cat::~Cat()
 {
     std::cout << "Cat destructor" << std::endl;
+}
+
+void Cat::makeSound(void) const
+{
+    std::cout << "Miaaaaaw" << std::endl;
 }

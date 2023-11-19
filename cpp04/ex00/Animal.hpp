@@ -10,9 +10,9 @@ class Animal
     public:
         Animal(void);
         ~Animal();
-        std::string getType(void);
+        std::string getType(void) const;
         void setString(std::string const str);
-        void makeSound(void);
+        void makeSound(void) const;
 
 };
 
@@ -21,7 +21,7 @@ class Dog : public Animal
     public :
         Dog(void);
         ~Dog();
-        friend void makeSound(void);
+        void makeSound(void) const;
 };
 
 class Cat : public Animal
@@ -29,7 +29,7 @@ class Cat : public Animal
     public :
         Cat(void);
         ~Cat();
-        friend void makeSound(void);
+        void makeSound(void) const;
 };
 
 #endif
