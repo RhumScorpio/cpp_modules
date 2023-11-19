@@ -4,12 +4,23 @@
 #include <iostream>
 
 class WrongAnimal
+{    
+    private:
+        std::string type;
+    public:
+        WrongAnimal(void);
+        virtual ~WrongAnimal();
+        std::string getType(void) const;
+        void setString(std::string const str);
+        virtual void makeSound(void) const;
+};
+
+class WrongCat : public WrongAnimal
 {
-private:
-    /* data */
-public:
-    WrongAnimal(/* args */);
-    ~WrongAnimal();
+    public :
+        WrongCat(void);
+        ~WrongCat();
+        void makeSound(void) const;
 };
 
 #endif

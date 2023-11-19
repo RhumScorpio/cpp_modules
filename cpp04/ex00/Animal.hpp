@@ -9,27 +9,10 @@ class Animal
         std::string type;
     public:
         Animal(void);
-        ~Animal();
+        virtual ~Animal();
         std::string getType(void) const;
         void setString(std::string const str);
-        void makeSound(void) const;
-
-};
-
-class Dog : public Animal
-{
-    public :
-        Dog(void);
-        ~Dog();
-        void makeSound(void) const;
-};
-
-class Cat : public Animal
-{
-    public :
-        Cat(void);
-        ~Cat();
-        void makeSound(void) const;
+        virtual void makeSound(void) const;
 };
 
 #endif

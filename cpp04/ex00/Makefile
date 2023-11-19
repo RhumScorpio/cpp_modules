@@ -17,7 +17,10 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
 SRC		=	main.cpp	\
-			Animal.cpp
+			Animal.cpp	\
+			WrongAnimal.cpp \
+			Cat.cpp		\
+			Dog.cpp
 #Colors:
 GREEN		=	\e[92;5;118m
 YELLOW		=	\e[93;5;226m
