@@ -9,12 +9,7 @@ int main(void)
 	std::cout << "type hord size : " << std::flush;
 	std::cin >> i;
 	Zombie *hord = zombieHorde(i, "Alex");
-	int j = 0;
-	while (j < i)
-	{
-		hord[j].~Zombie();
-		j++;
-	}
-	hord->~Zombie();
+
+	delete [] hord;
 	return (0);
 }
