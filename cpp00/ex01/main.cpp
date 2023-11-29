@@ -13,6 +13,8 @@ int main()
 	{
 		std::cout << "PROMPT > ";
 		std::cin >> input;
+		if (std::cin.eof())
+			std::exit(0);
 		if (!input.compare("ADD"))
 			phoneContact.addContact();
 		else if (!input.compare("SEARCH"))

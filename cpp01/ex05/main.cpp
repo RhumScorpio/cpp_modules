@@ -1,24 +1,23 @@
 #include "Harl.hpp"
 #include <cstdlib>
 
-int main(int ac, char **av)
+int main(void)
 {
+	int input = 0;
     int i = 0;
     int level = 0;
     std::string    identifiers[4]={ "INFO", "WARNING", "ERROR", "DEBUG" };
     Harl  harl;
 
-    if (ac == 2)
+	std::cout << "How much random generation of complains? : ";
+	std::cin >> input;
+	if (std::cin.eof())
+		std::exit(0);
+    while (i < input)
     {
-        while (i < atoi(av[1]))
-        {
-            level = rand() % 4;
-            std::cout << level << "| " << std::flush;
-            harl.complain(identifiers[level]);
-            i++;
-        }
+        level = rand() % 4;
+        harl.complain(identifiers[level]);
+        i++;
     }
-    else
-        std::cout << "Put a number : ./Harl nbOfComplain" << std::endl;
     return (0);
 }

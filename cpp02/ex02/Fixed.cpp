@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+// CONSTRUCTORS AND DESTRUCTOR
+
 Fixed::~Fixed()
 {
 }
@@ -23,7 +25,8 @@ Fixed::Fixed(const Fixed &fixed)
 {
     this->value = fixed.value;
 }
-// getter and setter
+
+// GETTER AND SETTER
 
 int Fixed::getRawBits(void) const
 {
@@ -44,7 +47,7 @@ int Fixed::toInt(void) const
     return (this->value >> this->dec);
 }
 
-// comparison operators
+// OPERATORS
 
 bool Fixed::operator>(Fixed const &copy) const
 {
@@ -76,9 +79,6 @@ bool Fixed::operator!=(Fixed const &copy) const
     return (this->toFloat() != copy.toFloat());
 }
 
-
-// incrementation and decrementation operators
-
 Fixed Fixed::operator++(void)
 {
     this->setRawBits(this->toFloat() + 1);
@@ -106,7 +106,6 @@ Fixed Fixed::operator--(int value)
     std::cout << this->toFloat() << std::endl;
     return (*this);
 }
-// basic operations
 
 Fixed Fixed::operator+(Fixed const &copy) const
 {
@@ -132,7 +131,6 @@ Fixed Fixed::operator/(Fixed const &copy) const
     return (result);
 }
 
-// min
 const Fixed &Fixed::min(Fixed const &nbl, Fixed const &nbr)
 {
     if (nbl.getRawBits() > nbr.getRawBits())
@@ -141,7 +139,6 @@ const Fixed &Fixed::min(Fixed const &nbl, Fixed const &nbr)
         return (nbl);
 }
 
-// max
 const Fixed &Fixed::max(Fixed const &nbl, Fixed const &nbr)
 {
     if (nbl.getRawBits() < nbr.getRawBits())
@@ -149,15 +146,12 @@ const Fixed &Fixed::max(Fixed const &nbl, Fixed const &nbr)
     else
         return (nbl);
 }
-// assignement operator
 
 Fixed &Fixed::operator=(Fixed const &copy)
 {
 	this->value = copy.getRawBits();
     return (*this);
 }
-
-// << operator
 
 std::ostream &operator<<(std::ostream &str, Fixed const &fixed)
 {

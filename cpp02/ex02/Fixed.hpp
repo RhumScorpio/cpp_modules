@@ -35,10 +35,8 @@ class Fixed
         Fixed operator*(Fixed const &copy) const;
         Fixed operator/(Fixed const &copy) const;
     // min
-        //static int min(Fixed const &nbl, Fixed const &nbr);
         static const Fixed &min(Fixed const &nbl, Fixed const &nbr);
     // max
-        //static int max(Fixed const &nbl, Fixed const &nbr);
         static const Fixed &max(Fixed const &nbl, Fixed const &nbr);
     // constructors
         Fixed(const int intValue);

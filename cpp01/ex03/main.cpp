@@ -6,7 +6,7 @@ int main(void)
 {
     Weapon test;
 
-    test.setType("Hello World");
+    test.setType("Weapon type");
     std::cout << test.getType() << std::endl;
 
     Weapon club("crude spiked club");
