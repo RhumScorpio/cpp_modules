@@ -35,7 +35,7 @@ void Fixed::setRawBits(int const raw)
 }
 float Fixed::toFloat(void) const
 {
-    return (this->value / (float)(1 << this->dec));
+    return (this->value / roundf(1 << this->dec));
 }
 
 int Fixed::toInt(void) const
