@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : AAnimal("Cat")
 {
     try {
         this->brain = new Brain();
@@ -11,9 +11,10 @@ Cat::Cat(void) : Animal("Cat")
     std::cout << "Cat constructor" << std::endl;
 }
 
-Cat::Cat(Cat const &copy) : Animal("Cat")
+Cat::Cat(Cat const &copy) : AAnimal("Cat")
 {
-    *this = copy;
+    if (this != &copy)
+        *this = copy;
 }
 
 Cat::~Cat()

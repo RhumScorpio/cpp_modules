@@ -16,12 +16,12 @@ CC		= c++
 FLAGS	= -g3 -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
-SRC		=	main.cpp	\
-			Animal.cpp	\
-			WrongAnimal.cpp \
-			Cat.cpp		\
-			Dog.cpp		\
-			Brain.cpp
+SRC		=	main.cpp			\
+			AMateria.cpp 		\
+			Character.cpp		\
+			Ice.cpp				\
+			Cure.cpp			\
+			MateriaSource.cpp
 #Colors:
 GREEN		=	\e[92;5;118m
 YELLOW		=	\e[93;5;226m

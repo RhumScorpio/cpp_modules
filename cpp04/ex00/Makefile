@@ -19,6 +19,7 @@ RM		= rm -rf
 SRC		=	main.cpp	\
 			Animal.cpp	\
 			WrongAnimal.cpp \
+			WrongCat.cpp	\
 			Cat.cpp		\
 			Dog.cpp
 #Colors:

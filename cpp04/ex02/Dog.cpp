@@ -1,6 +1,6 @@
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Dog::Dog(void) : AAnimal("Dog")
 {
     try {
         this->brain = new Brain();
@@ -8,43 +8,43 @@ Cat::Cat(void) : Animal("Cat")
     catch (const std::bad_alloc& e) {
         std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
     }
-    std::cout << "Cat constructor" << std::endl;
+    std::cout << "Dog constructor" << std::endl;
 }
 
-Cat::Cat(Cat const &copy) : Animal("Cat")
+Dog::Dog(Dog const &copy) : AAnimal("Dog")
 {
     *this = copy;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->brain;
-    std::cout << "Cat destructor" << std::endl;
+    std::cout << "Dog destructor" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const &copy)
+Dog &Dog::operator=(Dog const &copy)
 {
     if (this != &copy)
     {
         this->type = copy.type;
         this->brain = new Brain( *copy.brain );
     }
-    std::cout << "Cat copy called." << std::endl;
+    std::cout << "Dog copy called." << std::endl;
     return (*this);
 }
 
-void Cat::makeSound(void) const
+void Dog::makeSound(void) const
 {
-    std::cout << "Miaaaaaw" << std::endl;
+    std::cout << "Waf Waf Waf" << std::endl;
 }
 
-void Cat::addIdeas(int const nbOfIdeas) const
+void Dog::addIdeas(int const nbOfIdeas) const
 {
     for (int i = 0; i < nbOfIdeas; i++)
         this->brain->putIdea(i);
 }
 
-void Cat::showIdeas(void) const
+void Dog::showIdeas(void) const
 {
     this->brain->printIdeas();
 }

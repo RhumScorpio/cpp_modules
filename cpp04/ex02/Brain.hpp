@@ -9,14 +9,15 @@
 class Brain
 {
     private :
-        std::string ideas[100];
+        std::string *ideas;
     public :
         Brain(void);
-        Brain(Brain const &copy);
+        Brain(Brain &copy);
         ~Brain();
         Brain &operator=(Brain const &copy);
         void putIdea(int const i);
         void printIdeas(void);
+        std::string *getIdeas(void);
 };
 
 #endif

@@ -17,7 +17,7 @@ FLAGS	= -g3 -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 
 SRC		=	main.cpp	\
-			Animal.cpp	\
+			AAnimal.cpp	\
 			WrongAnimal.cpp \
 			Cat.cpp		\
 			Dog.cpp		\
