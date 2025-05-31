@@ -110,7 +110,7 @@ Fixed Fixed::operator+(Fixed const &copy) const
 Fixed Fixed::operator-(Fixed const &copy) const
 {
     Fixed result(this->toFloat() - copy.toFloat());
-    return (*this);
+    return (result);
 }
 
 Fixed Fixed::operator*(Fixed const &copy) const
